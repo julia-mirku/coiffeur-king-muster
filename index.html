@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta name="color-scheme" content="dark light">
+<meta property="og:title" content="Coiffeur King 1 – Flawil">
+<meta property="og:description" content="Coiffeur in Flawil, Wilerstrasse 164. Preise, Öffnungszeiten und Kontakt.">
+<meta property="og:image" content="https://julia-mirku.github.io/coiffeur-king-muster/king_salon.jpg">
 <title>Coiffeur King 1 – Flawil</title>
 <meta name="description" content="Coiffeur King 1, Wilerstrasse 164, 9230 Flawil. Leistungen und Preise, Öffnungszeiten, Kontakt und Standort.">
 <script>
@@ -26,7 +29,6 @@
   try{
     if("IntersectionObserver" in window&&!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches)){
       d.classList.add("rv");
-      window.setTimeout(function(){d.classList.add("rv-all");},4000);
     }
   }catch(e){}
 })();
@@ -795,7 +797,7 @@ a.hexcall svg{stroke:#17120A}
 /* Juli 18.11: Preisblock nicht als harte helle Flaeche – weicher Verlauf aus dem Dunkel, warmes Hell mit Goldschimmer in der Mitte */
 .prices{background:
   radial-gradient(ellipse 70% 38% at 50% 50%,rgba(222,186,112,.22),rgba(222,186,112,0) 72%),
-  linear-gradient(to bottom,var(--bg) 0,#1E1A15 24px,#3A332A 52px,#6E614B 84px,#A6977A 114px,#CFC2A4 140px,#E6DCC6 164px,#F2EADA 190px,#F2EADA 50%,#F2EADA calc(100% - 190px),#E6DCC6 calc(100% - 164px),#CFC2A4 calc(100% - 140px),#A6977A calc(100% - 114px),#6E614B calc(100% - 84px),#3A332A calc(100% - 52px),#1E1A15 calc(100% - 24px),var(--bg) 100%)}
+  linear-gradient(to bottom,var(--bg) 0,#1E1A15 18px,#3A332A 40px,#6E614B 64px,#A6977A 88px,#CFC2A4 108px,#E6DCC6 126px,#F2EADA 144px,#F2EADA 50%,#F2EADA calc(100% - 144px),#E6DCC6 calc(100% - 126px),#CFC2A4 calc(100% - 108px),#A6977A calc(100% - 88px),#6E614B calc(100% - 64px),#3A332A calc(100% - 40px),#1E1A15 calc(100% - 18px),var(--bg) 100%)}
 .prices>.wrap{padding-top:180px;padding-bottom:180px}
 @media (min-width:900px){.prices>.wrap{padding-top:200px;padding-bottom:200px}}
 /* Juli 20.11: "Glamour der Stars" geht an wie Licht – Flackern wie bei der "1", Endfarbe und Schein wie bisher; nur wenn sichtbar */
@@ -809,6 +811,17 @@ a.hexcall svg{stroke:#17120A}
 @media (prefers-reduced-motion:no-preference){
   .rv .ab.in .ab-lead em{animation:flickglow 1.3s linear .45s both}
 }
+/* Review 20.11 */
+.rv .tile.is-today.in,.rv.rv-all .tile.is-today{animation:up .5s cubic-bezier(.2,.7,.2,1) both,pulse 2s ease-in-out .7s 1}
+#leistungen{scroll-margin-top:-60px}
+.prices>.wrap{padding-top:150px;padding-bottom:150px}
+@media (min-width:900px){.prices>.wrap{padding-top:160px;padding-bottom:160px}#leistungen{scroll-margin-top:-80px}}
+.ask-t{margin:0 0 12px;font-size:16px;line-height:1.45;color:var(--paper-ink)}
+@media (max-width:599px){.stage{height:clamp(440px,calc(100svh - 248px),660px)}}
+.more{white-space:normal;max-width:100%}
+.btn[href^="tel:"]::after,.arch::before,.hexcall{animation-iteration-count:4}
+.more{white-space:nowrap}.more .lg-s{display:none}
+@media (max-width:359px){.more .lg-l{display:none}.more .lg-s{display:inline}}
 </style>
 </head>
 <body>
@@ -818,12 +831,12 @@ a.hexcall svg{stroke:#17120A}
 
 <header class="head" id="top">
   <div class="wrap head-in">
-    <a class="mark" href="#start" aria-label="Coiffeur King 1 – Startseite">
+    <a class="mark" href="#top" aria-label="Coiffeur King 1 – Startseite">
       <svg viewBox="0 0 100 112" aria-hidden="true" focusable="false"><path class="hx" d="M50 4 L95 30 L95 82 L50 108 L5 82 L5 30 Z"/><path class="cr" d="M28 70 L24 42 L38 54 L50 36 L62 54 L76 42 L72 70 Z M28 74 H72 V80 H28 Z"/></svg>
       <span><small>Coiffeur</small><b>King 1</b></span>
     </a>
     <nav class="nav" aria-label="Hauptnavigation">
-      <a href="#start">Startseite</a>
+      <a href="#top">Startseite</a>
       <a href="#leistungen">Leistungen</a>
       <a href="#zeiten">Öffnungszeiten</a>
       <a href="#kontakt">Kontakt &amp; Standort</a>
@@ -837,8 +850,8 @@ a.hexcall svg{stroke:#17120A}
 <main>
   <div class="band call on-band">
     <div class="wrap">
-      <p>Möchten Sie mit Ihrem persönlichen Stylist sprechen?</p>
-      <a class="btn" href="tel:+41412188696">Telefonat vereinbaren <span class="arr" aria-hidden="true">→</span></a>
+      <p>Möchten Sie mit Ihrem persönlichen Stylisten sprechen?</p>
+      <a class="btn" href="tel:+41412188696">Jetzt anrufen <span class="arr" aria-hidden="true">→</span></a>
     </div>
   </div>
 
@@ -916,6 +929,7 @@ a.hexcall svg{stroke:#17120A}
             </ul>
           </article>
           <div class="ask r" style="--d:.2s">
+            <p class="ask-t">Fragen zu Preisen oder Termin? Schreiben Sie uns.</p>
             <a class="btn" href="https://wa.me/41767204868" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
               WhatsApp</a>
@@ -940,15 +954,15 @@ a.hexcall svg{stroke:#17120A}
         <h2 class="h2 r" id="h-bew">Bewertungen</h2>
         <div class="score r">
           <svg viewBox="0 0 100 112" role="img" aria-label="4,9 von 5"><path class="hx2" d="M50 12 L88 34 L88 78 L50 100 L12 78 L12 34 Z"/><path class="hx" d="M50 4 L95 30 L95 82 L50 108 L5 82 L5 30 Z"/><text class="v" x="50" y="62" text-anchor="middle">4,9</text><text class="o" x="50" y="80" text-anchor="middle">/ 5</text></svg>
-          <p><b>163 Bewertungen</b>auf Google</p>
+          <p><b>163 Bewertungen</b> auf Google</p>
         </div>
-        <a class="btn ghost more r" href="https://www.google.com/maps/search/?api=1&amp;query=Coiffeurking1+Wilerstrasse+164+Flawil" rel="noopener">Alle Bewertungen auf Google <span aria-hidden="true">→</span></a>
+        <a class="btn ghost more r" href="https://www.google.com/maps/search/?api=1&amp;query=Coiffeurking1+Wilerstrasse+164+Flawil" rel="noopener"><span class="lg-l">Alle Bewertungen auf Google</span><span class="lg-s">Alle Google-Bewertungen</span> <span aria-hidden="true">→</span></a>
       </div>
       <ul class="quotes">
-        <li class="r"><q>Guter Mann er geht auf wünsche ein ist schnell und professionel gerne wieder.</q><span class="who">Stefan</span></li>
+        <li class="r"><q>Guter Mann, er geht auf Wünsche ein, ist schnell und professionell. Gerne wieder.</q><span class="who">Stefan</span></li>
         <li class="r" style="--d:.08s"><q>Es ist ein sehr einladender Ort, die Angestellten sind sehr höflich und schneiden Ihnen die Haare ganz nach Ihren Wünschen.</q><span class="who">Hikmet</span></li>
-        <li class="r" style="--d:.16s"><q>Sehr flotter service, kinderfreundlich, müssen nie lange warten – er geht die extrameile</q><span class="who">Marco</span></li>
-        <li class="r" style="--d:.24s"><q>Sehr netter herr, sehr ruhig und zuvorkommend, 5 Sterne mehr als verdient.</q><span class="who">David</span></li>
+        <li class="r" style="--d:.16s"><q>Sehr flotter Service, kinderfreundlich, müssen nie lange warten – er geht die Extrameile.</q><span class="who">Marco</span></li>
+        <li class="r" style="--d:.24s"><q>Sehr netter Herr, sehr ruhig und zuvorkommend, 5 Sterne mehr als verdient.</q><span class="who">David</span></li>
       </ul>
     </div>
   </section>
@@ -1098,13 +1112,26 @@ a.hexcall svg{stroke:#17120A}
     var r=timeOf(n);if(!r){return;}
     for(var q=0;q<dbs.length;q++){var on=dbs[q].getAttribute("data-d")===String(n);dbs[q].setAttribute("aria-pressed",on?"true":"false");dbs[q].parentNode.classList.toggle("d-sel",on);}
     for(var q2=0;q2<tiles.length;q2++){tiles[q2].classList.toggle("is-sel",tiles[q2]===r.tile);}
-    if(pd2&&pt&&pick){pd2.textContent=DN[n]+(n===d?", heute":"");pt.textContent=r.txt;pick.classList.toggle("zu",r.tile.classList.contains("off"));}
+    if(pd2&&pt&&pick){pd2.textContent=DN[n]+(n===d?", heute":"")+" ";pt.textContent=r.txt;pick.classList.toggle("zu",r.tile.classList.contains("off"));}
   }
   for(var q3=0;q3<dbs.length;q3++){dbs[q3].addEventListener("click",function(){choose(parseInt(this.getAttribute("data-d"),10));});}
   choose(d);
   var ht=document.getElementById("heute-t"),hl=document.getElementById("heute");
   if(ht&&hl){
-    if(d===0){ht.textContent="Heute geschlossen";hl.classList.add("zu");}else{ht.textContent="Heute geöffnet";}
+    /* Zeiten: Mo–Fr 9–19, Sa 8–18, So zu; an Feiertagen neutral (Zeiten nicht bekannt) */
+    var now=new Date(),Y=now.getFullYear();
+    function easter(y){var a=y%19,b=Math.floor(y/100),c=y%100,dd=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-dd-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(y,mo-1,da);}
+    function ds(x){return x.getMonth()+1+"-"+x.getDate();}
+    function plus(x,n){return new Date(x.getFullYear(),x.getMonth(),x.getDate()+n);}
+    var E=easter(Y),FT={"1-1":1,"1-2":1,"8-1":1,"11-1":1,"12-25":1,"12-26":1};
+    FT[ds(plus(E,-2))]=1;FT[ds(plus(E,1))]=1;FT[ds(plus(E,39))]=1;FT[ds(plus(E,50))]=1;
+    var HRS={1:[9,19],2:[9,19],3:[9,19],4:[9,19],5:[9,19],6:[8,18]},hh=now.getHours()+now.getMinutes()/60,o=HRS[d];
+    function two(x){return (x<10?"0":"")+x+":00";}
+    if(FT[ds(now)]){ht.textContent="Öffnungszeiten";}
+    else if(!o){ht.textContent="Heute geschlossen";hl.classList.add("zu");}
+    else if(hh<o[0]){ht.textContent="Heute ab "+two(o[0])+" geöffnet";}
+    else if(hh<o[1]){ht.textContent="Jetzt geöffnet bis "+two(o[1]);}
+    else{ht.textContent="Jetzt geschlossen";hl.classList.add("zu");}
   }
 
   /* Daumenleiste erst, wenn die Knoepfe im Startbild weg sind */
