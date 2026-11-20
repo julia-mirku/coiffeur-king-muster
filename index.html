@@ -1,4 +1,8 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta name="color-scheme" content="dark light">
 <title>Coiffeur King 1 – Flawil</title>
@@ -794,8 +798,20 @@ a.hexcall svg{stroke:#17120A}
   linear-gradient(to bottom,var(--bg) 0,#1E1A15 24px,#3A332A 52px,#6E614B 84px,#A6977A 114px,#CFC2A4 140px,#E6DCC6 164px,#F2EADA 190px,#F2EADA 50%,#F2EADA calc(100% - 190px),#E6DCC6 calc(100% - 164px),#CFC2A4 calc(100% - 140px),#A6977A calc(100% - 114px),#6E614B calc(100% - 84px),#3A332A calc(100% - 52px),#1E1A15 calc(100% - 24px),var(--bg) 100%)}
 .prices>.wrap{padding-top:180px;padding-bottom:180px}
 @media (min-width:900px){.prices>.wrap{padding-top:200px;padding-bottom:200px}}
+/* Juli 20.11: "Glamour der Stars" geht an wie Licht – Flackern wie bei der "1", Endfarbe und Schein wie bisher; nur wenn sichtbar */
+@keyframes flickglow{
+  0%{opacity:.15;text-shadow:none}
+  8%{opacity:1;text-shadow:0 0 18px var(--glow)}
+  12%{opacity:.35;text-shadow:none}
+  20%{opacity:1;text-shadow:0 0 22px var(--glow)}
+  26%{opacity:.6;text-shadow:0 0 6px var(--glow)}
+  34%,100%{opacity:1;text-shadow:0 0 18px var(--glow)}}
+@media (prefers-reduced-motion:no-preference){
+  .rv .ab.in .ab-lead em{animation:flickglow 1.3s linear .45s both}
+}
 </style>
-
+</head>
+<body>
 <div class="page">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="gold-metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8A6828"/><stop offset=".22" stop-color="#EBCB82"/><stop offset=".42" stop-color="#A97F36"/><stop offset=".58" stop-color="#F7E4AA"/><stop offset=".78" stop-color="#B98F45"/><stop offset="1" stop-color="#E5C57C"/></linearGradient></defs></svg>
 
@@ -1113,5 +1129,5 @@ a.hexcall svg{stroke:#17120A}
   }
 })();
 </script>
-
-</body></html>
+</body>
+</html>
