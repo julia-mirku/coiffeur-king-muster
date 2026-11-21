@@ -832,30 +832,31 @@ a.hexcall svg{stroke:#17120A}
 .menu .lead{position:relative}
 .menu .lead::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(138,102,38,.2),#8A6626 40%,#D9B567 78%,#8A6626);transform:scaleX(0);transform-origin:left center;transition:transform .3s cubic-bezier(.3,.7,.3,1)}
 .menu li>span:first-child{transition:transform .25s ease,color .25s ease}
-.menu .pr{position:relative;isolation:isolate;display:inline-block;transition:transform .25s ease,color .25s ease,text-shadow .25s ease}
+.menu .pr{position:relative;isolation:isolate;display:inline-block;transform-origin:right center;transition:transform .25s ease,color .25s ease,text-shadow .25s ease}
 .menu .pr small{transition:color .25s ease}
 .menu .pr::before{content:"";position:absolute;left:-14px;right:-14px;top:-10px;bottom:-10px;border-radius:50%;background:radial-gradient(closest-side,rgba(214,176,98,.5),rgba(214,176,98,0));opacity:0;transition:opacity .25s ease;z-index:-1;pointer-events:none}
-.feat .big b{display:inline-block;transition:transform .25s ease,text-shadow .25s ease}
+.feat .big b{display:inline-block;transition:transform .25s ease,filter .25s ease;background:linear-gradient(110deg,var(--paper-acc) 0 42%,#C99A45 46%,#F6E2AE 50%,#C99A45 54%,var(--paper-acc) 58% 100%);background-size:400% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+@keyframes bigglint{from{background-position:100% 0}to{background-position:0% 0}}
 .board.live .menu li,.board.live .feat{cursor:pointer;-webkit-tap-highlight-color:transparent}
 @media (hover:hover){
   .board.live .menu li:hover .lead::after{transform:scaleX(1)}
   .board.live .menu li:hover>span:first-child{transform:translateX(3px)}
-  .board.live .menu li:hover .pr{transform:translateY(-2px);color:var(--paper-acc);text-shadow:0 1px 0 rgba(255,246,222,.9)}
+  .board.live .menu li:hover .pr{transform:translateY(-2px) scale(1.06);color:var(--paper-acc);text-shadow:0 1px 0 rgba(255,246,222,.9)}
   .board.live .menu li:hover .pr small{color:var(--paper-acc)}
   .board.live .menu li:hover .pr::before{opacity:1}
-  .board.live .feat:hover .big b{transform:translateY(-3px);text-shadow:0 0 18px rgba(214,176,98,.6)}
+  .board.live .feat:hover .big b{transform:translateY(-3px);filter:drop-shadow(0 0 10px rgba(214,176,98,.55));animation:bigglint .9s ease-out 1}
 }
 .board.live .menu li.tap .lead::after{transform:scaleX(1)}
 .board.live .menu li.tap>span:first-child{transform:translateX(3px)}
-.board.live .menu li.tap .pr{transform:translateY(-2px);color:var(--paper-acc);text-shadow:0 1px 0 rgba(255,246,222,.9)}
+.board.live .menu li.tap .pr{transform:translateY(-2px) scale(1.06);color:var(--paper-acc);text-shadow:0 1px 0 rgba(255,246,222,.9)}
 .board.live .menu li.tap .pr small{color:var(--paper-acc)}
 .board.live .menu li.tap .pr::before{opacity:1}
-.board.live .feat.tap .big b{transform:translateY(-3px);text-shadow:0 0 18px rgba(214,176,98,.6)}
+.board.live .feat.tap .big b{transform:translateY(-3px);filter:drop-shadow(0 0 10px rgba(214,176,98,.55));animation:bigglint .9s ease-out 1}
 .menu li{position:relative}
 .menu li::after{content:"";position:absolute;left:-6px;right:-6px;bottom:-1px;height:70%;background:radial-gradient(55% 100% at 62% 100%,rgba(201,160,80,.2),rgba(201,160,80,0));opacity:0;transition:opacity .3s ease;pointer-events:none}
 @media (hover:hover){.board.live .menu li:hover::after{opacity:1}}
 .board.live .menu li.tap::after{opacity:1}
-@media (prefers-reduced-motion:reduce){.menu .lead::after,.menu .pr,.menu li>span:first-child,.feat .big b{transition:none}}
+@media (prefers-reduced-motion:reduce){.menu .lead::after,.menu .pr,.menu li>span:first-child,.feat .big b{transition:none;animation:none!important}}
 </style>
 </head>
 <body>
