@@ -822,6 +822,11 @@ a.hexcall svg{stroke:#17120A}
 .btn[href^="tel:"]::after,.arch::before,.hexcall{animation-iteration-count:4}
 .more{white-space:nowrap}.more .lg-s{display:none}
 @media (max-width:359px){.more .lg-l{display:none}.more .lg-s{display:inline}}
+/* Juli 21.11: echte Fotos vom Salon (Google-Site), ohne Vergroesserung */
+.arch img{transform:none;object-position:50% 45%}
+.crop img{transform:none!important}
+.crop.g1 img{object-position:55% 50%}.crop.g2 img{object-position:50% 40%}.crop.g3 img{object-position:50% 40%}.crop.g4 img{object-position:62% 50%}.crop.g5 img{object-position:50% 55%}
+@media (min-width:900px){.strip-x{grid-template-columns:repeat(5,1fr)}}
 </style>
 </head>
 <body>
@@ -882,7 +887,7 @@ a.hexcall svg{stroke:#17120A}
 
     <div class="about">
       <div class="wrap">
-        <figure class="arch r" aria-hidden="true"><span class="hx-in"><img src="king_salon.jpg" alt="" width="1448" height="1086" loading="lazy"></span></figure>
+        <figure class="arch r" aria-hidden="true"><span class="hx-in"><img src="king_innen.jpg" alt="" width="1448" height="1086" loading="lazy"></span></figure>
         <div class="ab r">
           <p class="ab-k">Unser Ziel</p>
           <p class="ab-lead">Ihnen den <em>Glamour der Stars</em> zu verleihen.</p>
@@ -941,10 +946,11 @@ a.hexcall svg{stroke:#17120A}
 
   <div class="crops" aria-hidden="true">
     <div class="strip-x">
-      <figure class="crop c1 r"><span class="cin"><img src="king_salon.jpg" alt="" width="1448" height="1086" loading="lazy"></span></figure>
-      <figure class="crop c2 r" style="--d:.08s"><span class="cin"><img src="king_salon.jpg" alt="" width="1448" height="1086" loading="lazy"></span></figure>
-      <figure class="crop c3 r" style="--d:.16s"><span class="cin"><img src="king_salon.jpg" alt="" width="1448" height="1086" loading="lazy"></span></figure>
-      <figure class="crop c4 r" style="--d:.24s"><span class="cin"><img src="king_salon.jpg" alt="" width="1448" height="1086" loading="lazy"></span></figure>
+      <figure class="crop g1 r"><span class="cin"><img src="king_arbeit.jpg" alt="" width="1100" height="914" loading="lazy"></span></figure>
+      <figure class="crop g2 r" style="--d:.08s"><span class="cin"><img src="king_fade.jpg" alt="" width="1042" height="1042" loading="lazy"></span></figure>
+      <figure class="crop g3 r" style="--d:.16s"><span class="cin"><img src="king_schnitt.jpg" alt="" width="1100" height="1100" loading="lazy"></span></figure>
+      <figure class="crop g4 r" style="--d:.24s"><span class="cin"><img src="king_kunde.jpg" alt="" width="1100" height="1100" loading="lazy"></span></figure>
+      <figure class="crop g5 r" style="--d:.32s"><span class="cin"><img src="king_haus.jpg" alt="" width="837" height="1100" loading="lazy"></span></figure>
     </div>
   </div>
 
