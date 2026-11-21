@@ -962,6 +962,25 @@ a.hexcall svg{stroke:#17120A}
   .tile.done .days li:not(.d-sel):hover .dbtn{color:var(--acc-text)}
   .tile.done[data-days="6"]:not(.is-sel):hover,.tile.done[data-days="0"]:not(.is-sel):hover{border-color:var(--acc)}
 }
+/* Juli 21.11: alle Knoepfe leuchten beim Zeigen auf, alle Elemente reagieren */
+.btn{cursor:pointer;transition:transform .2s ease,filter .2s ease,color .2s ease}
+.btn::before,.btn::after{transition:background-color .2s ease}
+.quotes li::before,.quotes q,.score svg,.arch,.mark svg{transition:color .25s ease,filter .25s ease,text-shadow .25s ease,transform .3s ease}
+@media (hover:hover){
+  .btn.ghost:hover{filter:drop-shadow(0 0 8px rgba(214,176,98,.5));color:#F3DDA6}
+  .btn.ghost:hover::before{background:#D9B567}
+  .btn.ghost:hover::after,.on-stage .btn.ghost:hover::after{background:#3A2C12}
+  .on-paper .btn:hover{filter:drop-shadow(0 0 10px rgba(214,176,98,.6))}
+  .on-paper .btn:hover::before{background:#C99A45}
+  .on-paper .btn:hover::after{background:#9A7428}
+  .callpill.btn:hover,.call .btn:hover{filter:drop-shadow(0 0 9px rgba(246,206,110,.85)) drop-shadow(0 0 26px rgba(240,190,80,.6))}
+  .quotes li.done:hover::before{color:#F0CF83;text-shadow:0 0 14px rgba(214,176,98,.7)}
+  .quotes li.done:hover q{color:var(--ink)}
+  .score.done:hover svg{filter:drop-shadow(0 0 12px rgba(214,176,98,.55));transform:scale(1.04)}
+  .arch.done:hover{filter:drop-shadow(0 0 16px rgba(214,176,98,.45))}
+  .mark:hover svg{filter:drop-shadow(0 0 6px rgba(214,176,98,.7))}
+}
+.quotes q{transition:color .25s ease}
 </style>
 </head>
 <body>
