@@ -1008,6 +1008,15 @@ html .strip-x::-webkit-scrollbar{display:none}
 .gal-b:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 @media (hover:hover){.gal-b:hover{filter:drop-shadow(0 0 8px rgba(214,176,98,.7))}.gal-b:hover svg{fill:rgba(60,46,18,.9)}}
 @media (min-width:900px){.gal-p{left:calc(var(--pad) - 24px)}.gal-n{right:calc(var(--pad) - 24px)}}
+/* Juli 22.11: beim Klicken/Antippen kein blauer Rahmen; Tastatur: goldener Rahmen */
+html{-webkit-tap-highlight-color:transparent}
+a,button,[role=button],[tabindex],summary,.dbtn,.crop,.gal-b,.lb button{-webkit-tap-highlight-color:transparent}
+:focus:not(:focus-visible){outline:none!important}
+.days li:has(.dbtn:focus:not(:focus-visible)){outline-color:transparent}
+.days li.d-sel:has(.dbtn:focus:not(:focus-visible)){outline-color:var(--acc)}
+a:focus-visible,button:focus-visible,[role=button]:focus-visible,[tabindex]:focus-visible{outline:2px solid #D9B567!important;outline-offset:3px}
+.dbtn:focus-visible{outline:none!important}
+.days li:has(.dbtn:focus-visible){outline:2px solid #D9B567!important;outline-offset:4px}
 </style>
 </head>
 <body>
