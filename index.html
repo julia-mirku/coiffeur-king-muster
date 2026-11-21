@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="de-CH">
+<html lang="de-CH" translate="no">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<meta name="color-scheme" content="dark light">
+<meta name="color-scheme" content="dark">
+<meta name="google" content="notranslate">
 <meta property="og:title" content="Coiffeur King 1 – Flawil">
 <meta property="og:description" content="Coiffeur in Flawil, Wilerstrasse 164. Preise, Öffnungszeiten und Kontakt.">
 <meta property="og:image" content="https://julia-mirku.github.io/coiffeur-king-muster/king_salon.jpg">
@@ -857,6 +858,94 @@ a.hexcall svg{stroke:#17120A}
 @media (hover:hover){.board.live .menu li:hover::after{opacity:1}}
 .board.live .menu li.tap::after{opacity:1}
 @media (prefers-reduced-motion:reduce){.menu .lead::after,.menu .pr,.menu li>span:first-child,.feat .big b{transition:none;animation:none!important}}
+
+/* ===== Review 21.11 ===== */
+/* Adresse im Startbild */
+.where{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:500;color:var(--stage-ink);text-decoration:none;opacity:.92;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Anrufstreifen: Nummer als Textlink statt dritter Goldknopf */
+.call-l{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:700;font-size:16px;color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;font-variant-numeric:tabular-nums}
+.call-l .arr{transition:transform .2s ease}
+@media (hover:hover){.call-l:hover .arr{transform:translateX(3px)}}
+@media (max-width:899px){.call .wrap{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:14px;row-gap:0;padding-top:6px;padding-bottom:6px}.call p{font-size:14px}}
+/* Schreibtisch: Kopf-Knopf erst, wenn der Knopf im Startbild weg ist */
+@media (min-width:1100px){.callpill{transition:opacity .3s ease,visibility 0s linear .3s}html.cta-vis .callpill{opacity:0;visibility:hidden;pointer-events:none}html:not(.cta-vis) .callpill{transition:opacity .3s ease}}
+/* Preise: Schrift der Seite statt Code-Schrift */
+.menu .pr,.feat .big small,.menu .pr small,.time,.pick-t{font-family:var(--sans);font-variant-numeric:tabular-nums lining-nums}
+.menu .pr{font-weight:700;font-variation-settings:"wdth" 112}
+.menu .lw{display:inline}.menu .sw2{display:none}
+@media (max-width:1099px){.menu .lw{display:none}.menu .sw2{display:inline}}
+/* Decke fliesst als Hintergrund in den Preisblock */
+.prices{position:relative;isolation:isolate;background:
+  radial-gradient(ellipse 70% 38% at 50% 55%,rgba(222,186,112,.22),rgba(222,186,112,0) 72%),
+  linear-gradient(to bottom,var(--bg) 0,#14120E 90px,#3A332A 150px,#8E8066 185px,#CFC2A4 210px,#F2EADA 232px,#F2EADA calc(100% - 90px),#CFC2A4 calc(100% - 66px),#6E614B calc(100% - 40px),#1E1A15 calc(100% - 14px),var(--bg) 100%)}
+.prices::before{content:"";position:absolute;left:0;right:0;top:0;height:232px;z-index:-1;pointer-events:none;background:url(king_salon.jpg) 50% 16%/cover no-repeat;
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.95) 0,rgba(0,0,0,.85) 45%,rgba(0,0,0,0) 100%);mask-image:linear-gradient(to bottom,rgba(0,0,0,.95) 0,rgba(0,0,0,.85) 45%,rgba(0,0,0,0) 100%)}
+.prices>.wrap{padding-top:256px;padding-bottom:96px}
+#leistungen{scroll-margin-top:-150px}
+@media (min-width:900px){
+  .prices{background:
+    radial-gradient(ellipse 70% 38% at 50% 55%,rgba(222,186,112,.22),rgba(222,186,112,0) 72%),
+    linear-gradient(to bottom,var(--bg) 0,#14120E 140px,#3A332A 210px,#8E8066 248px,#CFC2A4 276px,#F2EADA 300px,#F2EADA calc(100% - 96px),#CFC2A4 calc(100% - 70px),#6E614B calc(100% - 42px),#1E1A15 calc(100% - 14px),var(--bg) 100%)}
+  .prices::before{height:300px;background-position:50% 18%}
+  .prices>.wrap{padding-top:330px;padding-bottom:104px}
+  #leistungen{scroll-margin-top:-200px}
+}
+/* Galerie: nach dem Einblenden leicht naeher, Klick = gross */
+.crop[role=button]{cursor:zoom-in;-webkit-tap-highlight-color:transparent}
+.crop .cin img{transition:transform .6s ease}
+@media (hover:hover){.crop.done:hover .cin img{transform:scale(1.05)!important}.crop.done:hover{filter:drop-shadow(0 0 10px rgba(214,176,98,.45))}}
+.crop:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+.lb{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:rgba(10,9,7,.93);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s linear .25s}
+.lb.open{opacity:1;visibility:visible;transition:opacity .25s ease}
+.lb-f{position:relative;margin:0;padding:3px;background:var(--acc);--gc:22px;clip-path:polygon(var(--gc) 0,calc(100% - var(--gc)) 0,100% var(--gc),100% calc(100% - var(--gc)),calc(100% - var(--gc)) 100%,var(--gc) 100%,0 calc(100% - var(--gc)),0 var(--gc))}
+.lb-f img{display:block;max-width:min(92vw,1000px);max-height:82svh;width:auto;height:auto;--gi:20px;clip-path:polygon(var(--gi) 0,calc(100% - var(--gi)) 0,100% var(--gi),100% calc(100% - var(--gi)),calc(100% - var(--gi)) 100%,var(--gi) 100%,0 calc(100% - var(--gi)),0 var(--gi))}
+.lb button{position:absolute;display:grid;place-items:center;width:52px;height:58px;border:0;padding:0;background:none;color:var(--acc);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.lb button svg{width:52px;height:58px;fill:rgba(20,18,14,.7);stroke:currentColor;stroke-width:4}
+.lb button b{position:absolute;font-size:22px;line-height:1;color:var(--ink)}
+.lb .lb-x{top:max(12px,env(safe-area-inset-top));right:12px}
+.lb .lb-p{left:10px;top:50%;margin-top:-29px}.lb .lb-n{right:10px;top:50%;margin-top:-29px}
+@media (hover:hover){.lb button:hover svg{fill:rgba(214,176,98,.25)}}
+.lb button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+/* Karte im Kontakt (nur Computer) */
+.map{display:none}
+@media (min-width:900px){
+  .map{display:block;position:relative;grid-column:1/-1;height:220px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .map img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+  .map .pin{position:absolute;left:50%;top:50%;width:26px;height:30px;margin:-30px 0 0 -13px;background:var(--metal);clip-path:var(--hex);box-shadow:0 0 0 2px #000}
+  .map .pin::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#17120A}
+  .map small{position:absolute;right:8px;bottom:6px;font-size:11px;color:var(--muted);background:rgba(14,13,11,.7);padding:1px 6px;border-radius:4px}
+  .card.done .map:hover img{transform:scale(1.03)}
+}
+/* kleine Elemente reagieren (erst nach dem Einblenden) */
+@media (hover:hover){
+  .stage-low.done .today:hover{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc),0 0 16px rgba(214,176,98,.35)}
+  .stage-low.done .where:hover{text-decoration:underline;text-underline-offset:4px}
+  .done .btn[href*="wa.me"]:hover,.done.btn[href*="wa.me"]:hover{box-shadow:0 10px 24px -8px rgba(214,176,98,.65);filter:brightness(1.08)}
+  .tile.done .days .dbtn:hover{color:var(--acc)}
+  .tile.done .days li:hover{filter:drop-shadow(0 0 1px var(--acc)) drop-shadow(0 0 6px rgba(214,176,98,.45))}
+}
+.today,.btn[href*="wa.me"],.days li{transition:box-shadow .25s ease,border-color .25s ease,filter .25s ease}
+/* Telefon quer: Startbild passt auf den Schirm */
+@media (orientation:landscape) and (max-height:500px){
+  .call .wrap{flex-direction:row;align-items:center;column-gap:14px;padding-top:4px;padding-bottom:4px}
+  .call p{font-size:13px}.call-l{min-height:36px;font-size:14px}
+  .band.call{display:none}
+  .stage{height:calc(100svh - 104px)!important;min-height:250px}
+  .stage-in{flex-direction:row!important;align-items:flex-end;justify-content:space-between;gap:20px}
+  .stage-low{margin-top:0!important;justify-items:end;max-width:56%}
+  .facts{justify-content:flex-end}.where{display:none}
+  .stage-in{padding-top:14px!important;padding-bottom:14px!important}
+  .name .n1{font-size:14px!important;margin-bottom:4px!important}
+  .name .n2{font-size:clamp(40px,11svh,64px)!important}
+  .name .n3{margin-top:4px!important}
+  .stage-low{padding-top:10px!important;gap:10px!important}
+  .cta{display:flex!important;flex-wrap:wrap;gap:8px!important}
+  .cta .btn{min-height:44px}
+}
+/* kleines Telefon 320 */
+@media (max-width:359px){.stage-in{padding-top:22px}.name .n1{margin-bottom:8px}}
+/* Telefon: kein Leerraum unten mehr (Daumenknopf gibt es nicht) */
+@media (max-width:899px){.ribbon{margin-bottom:0!important;padding-bottom:calc(5px + env(safe-area-inset-bottom,0px))!important}}
 </style>
 </head>
 <body>
@@ -886,7 +975,7 @@ a.hexcall svg{stroke:#17120A}
   <div class="band call on-band">
     <div class="wrap">
       <p>Möchten Sie mit Ihrem persönlichen Stylisten sprechen?</p>
-      <a class="btn" href="tel:+41412188696">Jetzt anrufen <span class="arr" aria-hidden="true">→</span></a>
+      <a class="call-l" href="tel:+41412188696">041 218 86 96 <span class="arr" aria-hidden="true">→</span></a>
     </div>
   </div>
 
@@ -899,6 +988,7 @@ a.hexcall svg{stroke:#17120A}
         <div class="stage-low">
           <div class="facts">
             <a class="today" href="#zeiten" id="heute"><i aria-hidden="true"></i><span id="heute-t">Öffnungszeiten</span></a>
+            <a class="where" href="#kontakt">Wilerstrasse 164 · 9230 Flawil</a>
           </div>
           <div class="cta">
             <a class="btn" href="tel:+41412188696">
@@ -907,7 +997,7 @@ a.hexcall svg{stroke:#17120A}
             <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Coiffeurking1+Wilerstrasse+164+Flawil" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
               Route</a>
-            <a class="btn ghost" href="https://wa.me/41767204868" rel="noopener">
+            <a class="btn ghost" href="https://wa.me/41767204868?text=Gr%C3%BCezi%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin." rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
               WhatsApp</a>
           </div>
@@ -917,7 +1007,7 @@ a.hexcall svg{stroke:#17120A}
 
     <div class="about">
       <div class="wrap">
-        <figure class="arch r" aria-hidden="true"><span class="hx-in"><img src="king_innen.jpg" alt="" width="1448" height="1086" loading="lazy"></span></figure>
+        <figure class="arch r" aria-hidden="true"><span class="hx-in"><img src="king_innen.jpg" alt="" width="837" height="1100" loading="lazy"></span></figure>
         <div class="ab r">
           <p class="ab-k">Unser Ziel</p>
           <p class="ab-lead">Ihnen den <em>Glamour der Stars</em> zu verleihen.</p>
@@ -933,21 +1023,19 @@ a.hexcall svg{stroke:#17120A}
     </div>
   </section>
 
-  <figure class="ceil r" aria-hidden="true"><img src="king_salon.jpg" alt="" width="1448" height="1086" loading="lazy"><span class="lamp"></span></figure>
-
   <section class="prices on-paper" id="leistungen" aria-labelledby="h-leist">
     <div class="wrap">
       <div class="p-head">
         <h2 class="h2 r" id="h-leist">Unsere Leistungen</h2>
-        <p class="r">Wir helfen Ihnen dabei, Ihre innere Schönheit zum Strahlen zu bringen. Dafür kreieren wir exklusive Looks, die von Ihrem persönlichen Stil, dem Anlass und Ihrem Geschmack inspiriert sind. Unser Team arbeitet mit Liebe zum Detail und verwendet hochwertige Salonprodukte in professioneller Qualität.</p>
+        <p class="r">Exklusive Looks nach Ihrem Stil, Anlass und Geschmack – mit Liebe zum Detail und hochwertigen Salonprodukten.</p>
       </div>
       <div class="boards">
         <article class="board r" aria-labelledby="h-g1">
-          <h3 id="h-g1">Haarschnitte &amp; Preise <svg viewBox="0 0 100 112" aria-hidden="true" focusable="false"><path d="M50 4 L95 30 L95 82 L50 108 L5 82 L5 30 Z"/></svg></h3>
+          <h3 id="h-g1">Haarschnitte <svg viewBox="0 0 100 112" aria-hidden="true" focusable="false"><path d="M50 4 L95 30 L95 82 L50 108 L5 82 L5 30 Z"/></svg></h3>
           <div class="feat"><span class="lbl">Herrenhaarschnitt</span><span class="big"><small>CHF</small><b>25.–</b></span></div>
           <ul class="menu">
-            <li style="--i:1"><span>Haarschnitt Kinder bis 12 Jahre</span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>15.–</span></li>
-            <li style="--i:2"><span>Haarschnitt Jugendliche bis 16 Jahre</span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>20.–</span></li>
+            <li style="--i:1"><span><span class="lw">Haarschnitt </span><span class="sw2">Kinder bis 12&nbsp;J.</span><span class="lw">Kinder bis 12 Jahre</span></span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>15.–</span></li>
+            <li style="--i:2"><span><span class="lw">Haarschnitt </span><span class="sw2">Jugendliche bis 16&nbsp;J.</span><span class="lw">Jugendliche bis 16 Jahre</span></span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>20.–</span></li>
             <li style="--i:3"><span>Haarschnitt &amp; Waschen</span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>30.–</span></li>
             <li style="--i:4"><span>Föhnen</span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>10.–</span></li>
             <li style="--i:5"><span>Bartschnitt</span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>15.–</span></li>
@@ -956,16 +1044,16 @@ a.hexcall svg{stroke:#17120A}
         </article>
         <div class="side">
           <article class="board r" aria-labelledby="h-g2" style="--d:.12s">
-            <h3 id="h-g2">Schönheit &amp; Preise <svg viewBox="0 0 100 112" aria-hidden="true" focusable="false"><path d="M50 4 L95 30 L95 82 L50 108 L5 82 L5 30 Z"/></svg></h3>
+            <h3 id="h-g2">Pflege &amp; Farbe <svg viewBox="0 0 100 112" aria-hidden="true" focusable="false"><path d="M50 4 L95 30 L95 82 L50 108 L5 82 L5 30 Z"/></svg></h3>
             <ul class="menu">
-              <li style="--i:1"><span>Blackmaske</span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>10.–</span></li>
+              <li style="--i:1"><span>Black Mask</span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>10.–</span></li>
               <li style="--i:2"><span>Bart färben</span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>20.–</span></li>
               <li style="--i:3"><span>Haare färben</span><span class="lead" aria-hidden="true"></span><span class="pr"><small>CHF</small>20.–</span></li>
             </ul>
           </article>
           <div class="ask r" style="--d:.2s">
             <p class="ask-t">Fragen zu Preisen oder Termin? Schreiben Sie uns.</p>
-            <a class="btn" href="https://wa.me/41767204868" rel="noopener">
+            <a class="btn" href="https://wa.me/41767204868?text=Gr%C3%BCezi%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin." rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
               WhatsApp</a>
           </div>
@@ -974,13 +1062,13 @@ a.hexcall svg{stroke:#17120A}
     </div>
   </section>
 
-  <div class="crops" aria-hidden="true">
+  <div class="crops" aria-label="Fotos aus dem Salon" role="group">
     <div class="strip-x">
-      <figure class="crop g1 r"><span class="cin"><img src="king_arbeit.jpg" alt="" width="1100" height="914" loading="lazy"></span></figure>
-      <figure class="crop g2 r" style="--d:.08s"><span class="cin"><img src="king_fade.jpg" alt="" width="1042" height="1042" loading="lazy"></span></figure>
-      <figure class="crop g3 r" style="--d:.16s"><span class="cin"><img src="king_schnitt.jpg" alt="" width="1100" height="1100" loading="lazy"></span></figure>
-      <figure class="crop g4 r" style="--d:.24s"><span class="cin"><img src="king_kunde.jpg" alt="" width="1100" height="1100" loading="lazy"></span></figure>
-      <figure class="crop g5 r" style="--d:.32s"><span class="cin"><img src="king_haus.jpg" alt="" width="837" height="1100" loading="lazy"></span></figure>
+      <figure class="crop g1 r" tabindex="0" role="button" aria-label="Foto vergrössern: Arbeit im Salon"><span class="cin"><img src="king_arbeit.jpg" alt="Arbeit im Salon" width="1100" height="914" loading="lazy"></span></figure>
+      <figure class="crop g2 r" style="--d:.08s" tabindex="0" role="button" aria-label="Foto vergrössern: Fade-Haarschnitt"><span class="cin"><img src="king_fade.jpg" alt="Fade-Haarschnitt" width="1042" height="1042" loading="lazy"></span></figure>
+      <figure class="crop g3 r" style="--d:.16s" tabindex="0" role="button" aria-label="Foto vergrössern: Haarschnitt von hinten"><span class="cin"><img src="king_schnitt.jpg" alt="Haarschnitt von hinten" width="1100" height="1100" loading="lazy"></span></figure>
+      <figure class="crop g4 r" style="--d:.24s" tabindex="0" role="button" aria-label="Foto vergrössern: Kunde nach dem Schnitt"><span class="cin"><img src="king_kunde.jpg" alt="Kunde nach dem Schnitt" width="1100" height="1100" loading="lazy"></span></figure>
+      <figure class="crop g5 r" style="--d:.32s" tabindex="0" role="button" aria-label="Foto vergrössern: Coiffeur King 1 von aussen"><span class="cin"><img src="king_haus.jpg" alt="Coiffeur King 1 von aussen" width="837" height="1100" loading="lazy"></span></figure>
     </div>
   </div>
 
@@ -1044,9 +1132,10 @@ a.hexcall svg{stroke:#17120A}
           </div>
         </div>
         <dl class="dl">
-          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/41767204868" rel="noopener">076 720 48 68</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/41767204868?text=Gr%C3%BCezi%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin." rel="noopener">076 720 48 68</a></dd></div>
           <div><dt>E-Mail</dt><dd><a href="mailto:king1coiffeur@gmail.com">king1coiffeur@gmail.com</a></dd></div>
         </dl>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Coiffeurking1+Wilerstrasse+164+Flawil" rel="noopener" aria-label="Karte: Wilerstrasse 164, 9230 Flawil – Route planen"><img src="king_karte.jpg" alt="" width="760" height="420" loading="lazy"><i class="pin" aria-hidden="true"></i><small>© OpenStreetMap</small></a>
       </div>
     </div>
   </section>
@@ -1131,7 +1220,8 @@ a.hexcall svg{stroke:#17120A}
   }
 
   /* heute: getDay() 0 = Sonntag */
-  var d=new Date().getDay();
+  function zh(){var n=new Date();try{var p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Zurich",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(n),r={};p.forEach(function(x){r[x.type]=parseInt(x.value,10);});if(r.year&&r.month&&r.day){return {y:r.year,m:r.month,d:r.day,h:r.hour%24,mi:r.minute};}}catch(e){}return {y:n.getFullYear(),m:n.getMonth()+1,d:n.getDate(),h:n.getHours(),mi:n.getMinutes()};}
+  var ZZ=zh(),d=new Date(ZZ.y,ZZ.m-1,ZZ.d).getDay();
   var tiles=document.querySelectorAll(".tile[data-days]");
   for(var k=0;k<tiles.length;k++){
     if((" "+tiles[k].getAttribute("data-days")+" ").indexOf(" "+d+" ")>-1){tiles[k].classList.add("is-today");}
@@ -1155,19 +1245,21 @@ a.hexcall svg{stroke:#17120A}
   var ht=document.getElementById("heute-t"),hl=document.getElementById("heute");
   if(ht&&hl){
     /* Zeiten: Mo–Fr 9–19, Sa 8–18, So zu; an Feiertagen neutral (Zeiten nicht bekannt) */
-    var now=new Date(),Y=now.getFullYear();
+    /* Zeit immer in Zuerich, egal wo der Besucher ist */
+    var Z=zh(),Y=Z.y,now=new Date(Z.y,Z.m-1,Z.d);
     function easter(y){var a=y%19,b=Math.floor(y/100),c=y%100,dd=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-dd-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(y,mo-1,da);}
     function ds(x){return x.getMonth()+1+"-"+x.getDate();}
     function plus(x,n){return new Date(x.getFullYear(),x.getMonth(),x.getDate()+n);}
-    var E=easter(Y),FT={"1-1":1,"1-2":1,"8-1":1,"11-1":1,"12-25":1,"12-26":1};
-    FT[ds(plus(E,-2))]=1;FT[ds(plus(E,1))]=1;FT[ds(plus(E,39))]=1;FT[ds(plus(E,50))]=1;
-    var HRS={1:[9,19],2:[9,19],3:[9,19],4:[9,19],5:[9,19],6:[8,18]},hh=now.getHours()+now.getMinutes()/60,o=HRS[d];
+    var FT={};
+    [Y,Y+1].forEach(function(yy){var E=easter(yy);["1-1","1-2","8-1","11-1","12-25","12-26"].forEach(function(k){FT[yy+"-"+k]=1;});[-2,1,39,50].forEach(function(n){var x=plus(E,n);FT[yy+"-"+ds(x)]=1;});});
+    function isFT(x){return !!FT[x.getFullYear()+"-"+ds(x)];}
+    var HRS={1:[9,19],2:[9,19],3:[9,19],4:[9,19],5:[9,19],6:[8,18]},hh=Z.h+Z.mi/60,o=HRS[d];
     function two(x){return (x<10?"0":"")+x+":00";}
-    if(FT[ds(now)]){ht.textContent="Öffnungszeiten";}
-    else if(!o){ht.textContent="Heute geschlossen";hl.classList.add("zu");}
-    else if(hh<o[0]){ht.textContent="Heute ab "+two(o[0])+" geöffnet";}
-    else if(hh<o[1]){ht.textContent="Jetzt geöffnet bis "+two(o[1]);}
-    else{ht.textContent="Jetzt geschlossen";hl.classList.add("zu");}
+    function nextOpen(){for(var n=1;n<9;n++){var x=plus(now,n),w=x.getDay();if(HRS[w]&&!isFT(x)){return (n===1?"Morgen":DN[w])+" ab "+two(HRS[w][0]);}}return "";}
+    if(isFT(now)){var no=nextOpen();ht.textContent=no?"Feiertag · "+no:"Öffnungszeiten";hl.classList.add("zu");}
+    else if(o&&hh<o[0]){ht.textContent="Heute ab "+two(o[0])+" geöffnet";}
+    else if(o&&hh<o[1]){ht.textContent="Jetzt geöffnet bis "+two(o[1]);}
+    else{ht.textContent="Geschlossen · "+nextOpen();hl.classList.add("zu");}
   }
 
   /* Daumenleiste erst, wenn die Knoepfe im Startbild weg sind */
@@ -1201,6 +1293,44 @@ a.hexcall svg{stroke:#17120A}
     },{passive:true});
     document.addEventListener("pointercancel",function(){clearTimeout(tm);tm=setTimeout(off,250);},{passive:true});
     window.addEventListener("scroll",function(){if(cur){clearTimeout(tm);tm=setTimeout(off,250);}},{passive:true});
+  })();
+
+  /* Review 21.11: Reaktion erst nach dem Einblenden */
+  (function(){
+    var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function markAll(){var a=document.querySelectorAll(".r,.stage-low");for(var i=0;i<a.length;i++){a[i].classList.add("done");}}
+    if(RM||!root.classList.contains("rv")){markAll();}
+    else{
+      document.addEventListener("animationend",function(e){if(e.animationName==="up"&&e.target.classList){e.target.classList.add("done");}});
+      setTimeout(function(){var sl=document.querySelector(".stage-low");if(sl){sl.classList.add("done");}},2500);
+    }
+  })();
+  /* Computer: nur ein Anrufknopf sichtbar */
+  (function(){
+    var c=document.querySelector(".stage .cta");
+    if(!c||!("IntersectionObserver" in window)){return;}
+    try{new IntersectionObserver(function(es){root.classList.toggle("cta-vis",es[0].isIntersecting);},{rootMargin:"-70px 0px 0px 0px"}).observe(c);}catch(e){}
+  })();
+  /* Galerie gross ansehen */
+  (function(){
+    var fs=document.querySelectorAll(".crop[role=button]");if(!fs.length){return;}
+    var srcs=[],alts=[];for(var i=0;i<fs.length;i++){var im=fs[i].querySelector("img");srcs.push(im.getAttribute("src"));alts.push(im.getAttribute("alt"));}
+    var hx='<svg viewBox="0 0 100 112" aria-hidden="true"><path d="M50 4 L95 30 L95 82 L50 108 L5 82 L5 30 Z"/></svg>';
+    var lb=document.createElement("div");lb.className="lb";lb.setAttribute("role","dialog");lb.setAttribute("aria-modal","true");lb.setAttribute("aria-label","Foto");
+    lb.innerHTML='<figure class="lb-f"><img alt=""></figure><button type="button" class="lb-p" aria-label="Vorheriges Foto">'+hx+'<b>‹</b></button><button type="button" class="lb-n" aria-label="Nächstes Foto">'+hx+'<b>›</b></button><button type="button" class="lb-x" aria-label="Schliessen">'+hx+'<b>×</b></button>';
+    document.body.appendChild(lb);
+    var img=lb.querySelector("img"),cur=0,last=null;
+    function show(n){cur=(n+srcs.length)%srcs.length;img.src=srcs[cur];img.alt=alts[cur];}
+    function open(n){last=document.activeElement;show(n);lb.classList.add("open");document.documentElement.style.overflow="hidden";lb.querySelector(".lb-x").focus();}
+    function close(){lb.classList.remove("open");document.documentElement.style.overflow="";if(last){last.focus();}}
+    for(var k=0;k<fs.length;k++){(function(n){fs[n].addEventListener("click",function(){open(n);});fs[n].addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();open(n);}});})(k);}
+    lb.querySelector(".lb-p").addEventListener("click",function(e){e.stopPropagation();show(cur-1);});
+    lb.querySelector(".lb-n").addEventListener("click",function(e){e.stopPropagation();show(cur+1);});
+    lb.querySelector(".lb-x").addEventListener("click",function(e){e.stopPropagation();close();});
+    lb.addEventListener("click",function(e){if(e.target===lb){close();}});
+    document.addEventListener("keydown",function(e){if(!lb.classList.contains("open")){return;}if(e.key==="Escape"){close();}else if(e.key==="ArrowLeft"){show(cur-1);}else if(e.key==="ArrowRight"){show(cur+1);}});
+    var sx=null;lb.addEventListener("touchstart",function(e){sx=e.touches[0].clientX;},{passive:true});
+    lb.addEventListener("touchend",function(e){if(sx===null){return;}var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){show(cur+(dx<0?1:-1));}sx=null;},{passive:true});
   })();
   /* Einblenden beim Scrollen */
   if(root.classList.contains("rv")){
