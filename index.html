@@ -919,7 +919,6 @@ a.hexcall svg{stroke:#17120A}
 @media (hover:hover){
   .stage-low.done .today:hover{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc),0 0 16px rgba(214,176,98,.35)}
   .stage-low.done .where:hover{text-decoration:underline;text-underline-offset:4px}
-  .done .btn[href*="wa.me"]:hover,.done.btn[href*="wa.me"]:hover{box-shadow:0 10px 24px -8px rgba(214,176,98,.65);filter:brightness(1.08)}
 }
 .today,.btn[href*="wa.me"]{transition:box-shadow .25s ease,border-color .25s ease,filter .25s ease}
 /* Telefon quer: Startbild passt auf den Schirm */
@@ -981,6 +980,19 @@ a.hexcall svg{stroke:#17120A}
   .mark:hover svg{filter:drop-shadow(0 0 6px rgba(214,176,98,.7))}
 }
 .quotes q{transition:color .25s ease}
+/* Juli 21.11: WhatsApp nicht braun – dunkel mit Goldrand, beim Zeigen Goldblick */
+@keyframes wasweep{from{background-position:100% 0,0 0}to{background-position:0% 0,0 0}}
+html .page .btn[href*="wa.me"]{color:#EBCB82;transition:transform .2s ease,filter .25s ease,color .2s ease}
+html .page .btn[href*="wa.me"]::before{background:linear-gradient(135deg,#8A6828,#E2C27E 45%,#A97F36 70%,#D9B567)}
+html .page .btn[href*="wa.me"]::after{inset:1.5px;background:linear-gradient(110deg,rgba(255,236,180,0) 38%,rgba(255,236,180,.55) 48%,rgba(255,248,225,.85) 50%,rgba(255,236,180,.55) 52%,rgba(255,236,180,0) 62%),linear-gradient(180deg,#221C12,#15120D);background-size:300% 100%,100% 100%;background-repeat:no-repeat;background-position:100% 0,0 0}
+html .page .on-paper .btn[href*="wa.me"]{filter:drop-shadow(0 4px 10px rgba(60,44,16,.25))}
+@media (hover:hover){
+  html .page .done .btn[href*="wa.me"]:hover,html .page .done.btn[href*="wa.me"]:hover{color:#FBE6AE;filter:drop-shadow(0 0 8px rgba(240,196,98,.7)) drop-shadow(0 0 22px rgba(240,190,80,.35))}
+  html .page .done .btn[href*="wa.me"]:hover::before,html .page .done.btn[href*="wa.me"]:hover::before{background:linear-gradient(135deg,#C9A057,#FBE6AE 45%,#E2B85C 70%,#F7DE9A)}
+  html .page .done .btn[href*="wa.me"]:hover::after,html .page .done.btn[href*="wa.me"]:hover::after{background:linear-gradient(110deg,rgba(255,236,180,0) 38%,rgba(255,236,180,.55) 48%,rgba(255,248,225,.85) 50%,rgba(255,236,180,.55) 52%,rgba(255,236,180,0) 62%),linear-gradient(180deg,#2A2216,#17130D);background-size:300% 100%,100% 100%;background-repeat:no-repeat;animation:wasweep .6s ease-out 1 both}
+}
+html .page .btn[href*="wa.me"]:active{filter:drop-shadow(0 0 10px rgba(240,196,98,.75))}
+@media (prefers-reduced-motion:reduce){html .page .btn[href*="wa.me"]::after{animation:none!important}}
 </style>
 </head>
 <body>
