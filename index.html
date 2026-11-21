@@ -866,7 +866,6 @@ a.hexcall svg{stroke:#17120A}
 .call-l{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:700;font-size:16px;color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;font-variant-numeric:tabular-nums}
 .call-l .arr{transition:transform .2s ease}
 @media (hover:hover){.call-l:hover .arr{transform:translateX(3px)}}
-@media (max-width:899px){.call .wrap{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:14px;row-gap:0;padding-top:6px;padding-bottom:6px}.call p{font-size:14px}}
 /* Schreibtisch: Kopf-Knopf erst, wenn der Knopf im Startbild weg ist */
 @media (min-width:1100px){.callpill{transition:opacity .3s ease,visibility 0s linear .3s}html.cta-vis .callpill{opacity:0;visibility:hidden;pointer-events:none}html:not(.cta-vis) .callpill{transition:opacity .3s ease}}
 /* Preise: Schrift der Seite statt Code-Schrift */
@@ -946,6 +945,9 @@ a.hexcall svg{stroke:#17120A}
 @media (max-width:359px){.stage-in{padding-top:22px}.name .n1{margin-bottom:8px}}
 /* Telefon: kein Leerraum unten mehr (Daumenknopf gibt es nicht) */
 @media (max-width:899px){.ribbon{margin-bottom:0!important;padding-bottom:calc(5px + env(safe-area-inset-bottom,0px))!important}}
+/* Juli 21.11: Text zu den Leistungen voll und gut lesbar */
+.p-head p{font-size:19px;line-height:1.55;color:#3E372C;max-width:40em}
+@media (min-width:900px){.p-head p{font-size:21px}}
 </style>
 </head>
 <body>
@@ -975,7 +977,7 @@ a.hexcall svg{stroke:#17120A}
   <div class="band call on-band">
     <div class="wrap">
       <p>Möchten Sie mit Ihrem persönlichen Stylisten sprechen?</p>
-      <a class="call-l" href="tel:+41412188696">041 218 86 96 <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn" href="tel:+41412188696">Jetzt anrufen <span class="arr" aria-hidden="true">→</span></a>
     </div>
   </div>
 
@@ -1027,7 +1029,7 @@ a.hexcall svg{stroke:#17120A}
     <div class="wrap">
       <div class="p-head">
         <h2 class="h2 r" id="h-leist">Unsere Leistungen</h2>
-        <p class="r">Exklusive Looks nach Ihrem Stil, Anlass und Geschmack – mit Liebe zum Detail und hochwertigen Salonprodukten.</p>
+        <p class="r">Wir helfen Ihnen dabei, Ihre innere Schönheit zum Strahlen zu bringen. Dafür kreieren wir exklusive Looks, die von Ihrem persönlichen Stil, dem Anlass und Ihrem Geschmack inspiriert sind. Unser Team arbeitet mit Liebe zum Detail und verwendet hochwertige Salonprodukte in professioneller Qualität.</p>
       </div>
       <div class="boards">
         <article class="board r" aria-labelledby="h-g1">
