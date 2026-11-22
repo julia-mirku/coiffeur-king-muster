@@ -1017,6 +1017,38 @@ a,button,[role=button],[tabindex],summary,.dbtn,.crop,.gal-b,.lb button{-webkit-
 a:focus-visible,button:focus-visible,[role=button]:focus-visible,[tabindex]:focus-visible{outline:2px solid #D9B567!important;outline-offset:3px}
 .dbtn:focus-visible{outline:none!important}
 .days li:has(.dbtn:focus-visible){outline:2px solid #D9B567!important;outline-offset:4px}
+/* Juli 22.11: Kontakt als goldene Terminkarte zum Umdrehen (keine Karte/Map) */
+.contact .h2{margin:0 0 22px}
+.tk{perspective:1600px}
+.tk-in{display:grid;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+.tk-in>*{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.tk-b{transform:rotateY(180deg)}
+.tk.flip .tk-in{transform:rotateY(180deg)}
+.tk-f{position:relative;overflow:hidden;border-radius:20px;display:grid;place-content:center;justify-items:center;gap:10px;padding:34px 20px;min-height:340px;color:#1B150B;
+  background:linear-gradient(135deg,#B48C45 0%,#F3D98F 28%,#D3A957 52%,#FBE6AE 74%,#C69A4E 100%);box-shadow:0 30px 60px -30px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,240,200,.6),inset 0 0 0 7px rgba(120,88,30,.35)}
+.tk-f::before{content:"";position:absolute;inset:14px;border:1px solid rgba(70,50,15,.45);border-radius:12px;pointer-events:none}
+.tk-glint{position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 60%);background-size:300% 100%;background-position:100% 0}
+.tk-logo{width:84px;height:94px}
+.tk-logo .hx{fill:none;stroke:#2A2010;stroke-width:5}
+.tk-logo .cr{fill:#2A2010}
+.tk-name{margin:0;text-align:center;line-height:1}
+.tk-name small{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.42em;text-transform:uppercase;margin-bottom:8px}
+.tk-name b{font-variation-settings:"wdth" 125;font-weight:800;font-size:46px;text-transform:uppercase;letter-spacing:.01em;text-shadow:0 1px 0 rgba(255,245,215,.7),0 -1px 0 rgba(90,62,18,.35)}
+.tk-kind{margin:0;font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase}
+.tk-turn{appearance:none;-webkit-appearance:none;border:0;background:none;cursor:pointer;font:inherit;-webkit-tap-highlight-color:transparent}
+.tk-turn-f{margin-top:12px;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(40,30,12,.55);color:#1B150B;font-weight:700;font-size:15px;transition:background-color .2s ease,box-shadow .2s ease}
+.card>.tk-turn-b,.tk-turn-b{position:absolute;top:14px;right:14px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);color:var(--acc-text);font-size:20px;transition:border-color .2s ease,box-shadow .2s ease}
+.tk-h{margin:0;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:16px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tk-h span{white-space:nowrap}
+.tk-b{border-radius:20px}
+@media (min-width:900px){.tk-f{min-height:420px}.tk-name b{font-size:64px}.tk-logo{width:104px;height:116px}.tk-h{font-size:18px}}
+@media (hover:hover){
+  .tk.done .tk-f:hover .tk-glint{animation:wasweep .8s ease-out 1 both}
+  .tk-turn-f:hover{background:rgba(40,30,12,.12);box-shadow:0 0 14px rgba(255,236,180,.8)}
+  .tk-turn-b:hover{border-color:var(--acc);box-shadow:0 0 12px rgba(214,176,98,.5)}
+}
+.tk-turn:focus-visible{outline:2px solid #D9B567;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.tk-in{transition:none}}
 </style>
 </head>
 <body>
@@ -1200,12 +1232,22 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible,[tabindex]:focu
 
   <section class="contact" id="kontakt" aria-labelledby="h-kon">
     <div class="wrap">
-      <div class="card r">
+      <h2 class="h2 r" id="h-kon">Kontakt &amp; Standort</h2>
+      <div class="tk r">
+        <div class="tk-in">
+          <div class="tk-f" aria-label="Vorderseite der Terminkarte">
+            <span class="tk-glint" aria-hidden="true"></span>
+            <svg class="tk-logo" viewBox="0 0 100 112" aria-hidden="true" focusable="false"><path class="hx" d="M50 4 L95 30 L95 82 L50 108 L5 82 L5 30 Z"/><path class="cr" d="M28 70 L24 42 L38 54 L50 36 L62 54 L76 42 L72 70 Z M28 74 H72 V80 H28 Z"/></svg>
+            <p class="tk-name"><small>Coiffeur</small><b>King 1</b></p>
+            <p class="tk-kind">Terminkarte · Flawil</p>
+            <button type="button" class="tk-turn tk-turn-f">Karte umdrehen <span aria-hidden="true">↻</span></button>
+          </div>
+<div class="card tk-b" aria-label="Rückseite der Terminkarte">
         <span class="honey" aria-hidden="true"></span>
-        <h2 class="h2" id="h-kon">Kontakt &amp; Standort</h2>
         <div class="c-main">
           <a class="tel" href="tel:+41412188696">041 218 86 96</a>
           <address class="addr">Wilerstrasse 164<br>9230 Flawil</address>
+          <p class="tk-h"><span>Mo–Fr 09:00–19:00</span><span>Sa 08:00–18:00</span><span>So geschlossen</span></p>
           <div class="c-btns">
             <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Coiffeurking1+Wilerstrasse+164+Flawil" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
@@ -1216,7 +1258,8 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible,[tabindex]:focu
           <div><dt>WhatsApp</dt><dd><a href="https://wa.me/41767204868?text=Gr%C3%BCezi%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin." rel="noopener">076 720 48 68</a></dd></div>
           <div><dt>E-Mail</dt><dd><a href="mailto:king1coiffeur@gmail.com">king1coiffeur@gmail.com</a></dd></div>
         </dl>
-        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Coiffeurking1+Wilerstrasse+164+Flawil" rel="noopener" aria-label="Karte: Wilerstrasse 164, 9230 Flawil – Route planen"><img src="king_karte.jpg" alt="" width="760" height="420" loading="lazy"><i class="pin" aria-hidden="true"></i><small>© OpenStreetMap</small></a>
+        <button type="button" class="tk-turn tk-turn-b" aria-label="Karte umdrehen: Vorderseite zeigen">↻</button>
+        </div>
       </div>
     </div>
   </section>
@@ -1426,6 +1469,20 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible,[tabindex]:focu
     pv.addEventListener("click",function(){st.scrollBy({left:-step(),behavior:"smooth"});});
     nx.addEventListener("click",function(){st.scrollBy({left:step(),behavior:"smooth"});});
     st.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize",upd);upd();
+  })();
+
+  /* Terminkarte: nach dem Einblenden einmal umdrehen, Knoepfe drehen hin und her */
+  (function(){
+    var tk=document.querySelector(".tk");if(!tk){return;}
+    var f=tk.querySelector(".tk-f"),b=tk.querySelector(".tk-b"),auto=false;
+    function set(fl){tk.classList.toggle("flip",fl);f.inert=fl;b.inert=!fl;f.setAttribute("aria-hidden",fl?"true":"false");b.setAttribute("aria-hidden",fl?"false":"true");}
+    set(false);
+    tk.querySelector(".tk-turn-f").addEventListener("click",function(){set(true);b.querySelector(".tel").focus({preventScroll:true});});
+    tk.querySelector(".tk-turn-b").addEventListener("click",function(){set(false);tk.querySelector(".tk-turn-f").focus({preventScroll:true});});
+    f.addEventListener("click",function(e){if(!e.target.closest(".tk-turn")){set(true);}});
+    function go(){if(auto){return;}auto=true;setTimeout(function(){set(true);},700);}
+    if(!("IntersectionObserver" in window)){set(true);return;}
+    try{new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting&&(x.intersectionRatio>.45||x.intersectionRect.height>innerHeight*.45)){go();}});},{threshold:[0,.2,.3,.45,.6,.8]}).observe(tk);}catch(e){set(true);}
   })();
   /* Einblenden beim Scrollen */
   if(root.classList.contains("rv")){
