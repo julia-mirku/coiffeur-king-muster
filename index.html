@@ -1049,6 +1049,10 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible,[tabindex]:focu
 }
 .tk-turn:focus-visible{outline:2px solid #D9B567;outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.tk-in{transition:none}}
+/* Juli 23.11: die «1» bekommt einen dunklen Schatten, damit sie sich von der hellen Decke abhebt */
+html .name .one{color:rgba(14,11,7,.55);filter:drop-shadow(0 0 1.5px rgba(10,8,5,1)) drop-shadow(0 1px 3px rgba(10,8,5,.95)) drop-shadow(0 3px 14px rgba(10,8,5,.85)) drop-shadow(0 0 6px var(--stage-glow)) drop-shadow(0 0 14px var(--stage-glow))}
+/* Juli 23.11: Galerie scrollt nicht nach oben/unten, Rahmen immer ganz sichtbar; Mausrad blaettert die Seite */
+html .strip-x{overflow-y:hidden!important;padding-top:10px!important;padding-bottom:14px!important;overscroll-behavior-y:auto}
 </style>
 </head>
 <body>
