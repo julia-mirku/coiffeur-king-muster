@@ -1017,7 +1017,7 @@ a,button,[role=button],[tabindex],summary,.dbtn,.crop,.gal-b,.lb button{-webkit-
 a:focus-visible,button:focus-visible,[role=button]:focus-visible,[tabindex]:focus-visible{outline:2px solid #D9B567!important;outline-offset:3px}
 .dbtn:focus-visible{outline:none!important}
 .days li:has(.dbtn:focus-visible){outline:2px solid #D9B567!important;outline-offset:4px}
-/* Juli 22.11: Kontakt als goldene Terminkarte zum Umdrehen (keine Karte/Map) */
+/* Juli 22.11: Kontakt als goldene Terminkarte zum Umdrehen (keine Karte/Map) – Juli 23.11: Karte und Drehen entfernt, Kontakt direkt sichtbar; .tk-h bleibt fuer die Zeiten */
 .contact .h2{margin:0 0 22px}
 .tk{perspective:1600px}
 .tk-in{display:grid;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
@@ -1237,16 +1237,7 @@ html .strip-x{overflow-y:hidden!important;padding-top:10px!important;padding-bot
   <section class="contact" id="kontakt" aria-labelledby="h-kon">
     <div class="wrap">
       <h2 class="h2 r" id="h-kon">Kontakt &amp; Standort</h2>
-      <div class="tk r">
-        <div class="tk-in">
-          <div class="tk-f" aria-label="Vorderseite der Terminkarte">
-            <span class="tk-glint" aria-hidden="true"></span>
-            <svg class="tk-logo" viewBox="0 0 100 112" aria-hidden="true" focusable="false"><path class="hx" d="M50 4 L95 30 L95 82 L50 108 L5 82 L5 30 Z"/><path class="cr" d="M28 70 L24 42 L38 54 L50 36 L62 54 L76 42 L72 70 Z M28 74 H72 V80 H28 Z"/></svg>
-            <p class="tk-name"><small>Coiffeur</small><b>King 1</b></p>
-            <p class="tk-kind">Terminkarte · Flawil</p>
-            <button type="button" class="tk-turn tk-turn-f">Karte umdrehen <span aria-hidden="true">↻</span></button>
-          </div>
-<div class="card tk-b" aria-label="Rückseite der Terminkarte">
+      <div class="card r">
         <span class="honey" aria-hidden="true"></span>
         <div class="c-main">
           <a class="tel" href="tel:+41412188696">041 218 86 96</a>
@@ -1262,8 +1253,6 @@ html .strip-x{overflow-y:hidden!important;padding-top:10px!important;padding-bot
           <div><dt>WhatsApp</dt><dd><a href="https://wa.me/41767204868?text=Gr%C3%BCezi%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin." rel="noopener">076 720 48 68</a></dd></div>
           <div><dt>E-Mail</dt><dd><a href="mailto:king1coiffeur@gmail.com">king1coiffeur@gmail.com</a></dd></div>
         </dl>
-        <button type="button" class="tk-turn tk-turn-b" aria-label="Karte umdrehen: Vorderseite zeigen">↻</button>
-        </div>
       </div>
     </div>
   </section>
